@@ -17,7 +17,7 @@
 <body>
 <div class="updateForm" id="updateForm">
 
-    <el-form :model="form" label-width="80px">
+    <el-form  :model="form" label-width="80px">
 
         <el-form-item label="姓名:">
             <el-input  v-model="form.name" placeholder="请输入姓名"></el-input>
@@ -55,18 +55,33 @@
 
 </div>
 <script>
+
+
     var vm=new Vue({
         el:"#updateForm",
         data:{
             form:{
-                  name:"",
-                  pswd:"",
-                  sex:"",
-                  age:"",
-                  phone:"",
-                  // type:""
+                name:"",
+                pswd:"",
+                sex:"",
+                age:"",
+                phone:"",
+                id:''
             }
+
         },
+        created: function () {
+            axios({
+                method:'post',
+                url:'getUserById'
+            }).then((response)=>
+            {
+                console.log(response.data)
+                this.form=response.data
+            }).catch(function (error) {
+                console.log(error)
+            })
+            },
         methods: {
             submit:function ()
             {
@@ -88,36 +103,6 @@
             }
         }
     })
-    // var vm=new Vue({
-    //     el:"#updateForm",
-    //     data:{
-    //         form:{
-    //             name:"",
-    //             pswd:"",
-    //             sex:"",
-    //             age:"",
-    //             phone:"",
-    //             type:""
-    //
-    //         }
-    //     },
-    //     methods:{
-    //         submit: function () {
-    //             console.log(JSON.stringify(this.form))
-    //             axios({
-    //                 method: 'post',
-    //                 url: '/doUpdateUser',
-    //                 data: this.form
-    //             })
-    //                 .then(function (response) {
-    //                     // alert("修改成功")
-    //                     console.log(response.data)
-    //                 })
-    //                 .catch(function (error) {
-    //                     alert("修改失败")
-    //                 });
-    //         }
-    // })
 
 </script>
 <style>

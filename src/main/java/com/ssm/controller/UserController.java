@@ -1,5 +1,7 @@
 package com.ssm.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssm.pojo.User;
 import com.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +24,20 @@ public class UserController {
         return String.valueOf(userService.updateUser(user));
     }
 
+    @RequestMapping("/getUserById")
+    @ResponseBody
+    public String getUserById()
+    {
+        int testId=1;
+        ObjectMapper mapper = new ObjectMapper();
+        User user =userService.getUserById(testId);
+        String result = null;
+        try {
+            result = mapper.writeValueAsString(user);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 }
