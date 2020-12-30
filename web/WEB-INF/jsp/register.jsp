@@ -88,10 +88,10 @@
                     // age: [
                     //     {type: 'number', message: '年龄必须为数字值',trigger: 'change'}
                     // ],
-                    // phone: [
-                    //     // { required: true,message: '手机号不能为空',trigger: 'blur'},
-                    //     { required:true, min: 11, max: 11, type:'number', message: '长度必须为11个字符', trigger: 'change' }
-                    // ],
+                    phone: [
+                        // { required: true,message: '手机号不能为空',trigger: 'blur'},
+                        {min: 11, max: 11,message: '长度必须为11个字符', trigger: 'blur' }
+                    ],
                     type:[
                         {required:true,message:'请选择账户类型',trigger: 'blur'}
                     ]

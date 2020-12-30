@@ -11,10 +11,10 @@
 <div class="left">
     <ul>
         <li><a href="/toUpdateUserInfo" target="main">修改个人信息</a></li>
-        <li><a href="" target="main">查询所有志愿活动</a></li>
-        <li><a href="" target="main">管理已参加的志愿活动</a></li>
-        <li><a href="" target="main">选择志愿项目</a></li>
-<%--        <li><a href="" target="main">退选志愿项目</a></li>--%>
+        <li><a href="" target="main">发布志愿活动</a></li>
+        <li><a href="" target="main">管理志愿活动</a></li>
+        <li><a href="" target="main">发布成绩</a></li>
+        <li><a href="" target="main">管理成绩</a></li>
     </ul>
 </div>
 <div class="right">

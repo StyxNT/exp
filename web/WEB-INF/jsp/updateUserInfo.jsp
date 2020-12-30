@@ -17,7 +17,7 @@
 <body>
 <div class="updateForm" id="updateForm">
 
-    <el-form  :model="form" label-width="80px">
+    <el-form  :model="form" :rules="rules" label-width="80px">
 
         <el-form-item label="姓名:">
             <el-input  v-model="form.name" placeholder="请输入姓名"></el-input>
@@ -36,7 +36,7 @@
             <el-input v-model="form.age" placeholder="请输入年龄"></el-input>
         </el-form-item>
 
-        <el-form-item label="手机号">
+        <el-form-item label="手机号" prop="phone">
             <el-input v-model="form.phone" placeholder="请输入手机号"></el-input>
         </el-form-item>
 
@@ -67,6 +67,12 @@
                 age:"",
                 phone:"",
                 id:''
+            },
+            rules:{
+                phone: [
+                    // { required: true,message: '手机号不能为空',trigger: 'blur'},
+                    {min: 11, max: 11,message: '长度必须为11个字符', trigger: 'blur' }
+                ]
             }
 
         },
