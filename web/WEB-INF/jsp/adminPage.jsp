@@ -10,7 +10,9 @@
 </div>
 <div class="left">
     <ul>
+        <li><a href="" target="main">查询所有用户信息</a></li>
         <li><a href="/toUpdateUserInfo" target="main">管理用户信息</a></li>
+        <li><a href="" target="main">查询所有志愿活动信息</a></li>
         <li><a href="" target="main">管理志愿活动</a></li>
     </ul>
 </div>
