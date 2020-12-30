@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssm.dao.UserMapper">
+    <insert id="addUser" parameterType="User">
+        insert into user(name,pswd,age,sex,phone,type)
+            VALUES (#{name},#{pswd},#{age},#{sex},#{phone},#{type})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        update user
+        <set>
+            <if test="pswd!= null">pswd=#{pswd},</if>
+            <if test="age!= null">age=#{age},</if>
+            <if test="sex != null">sex=#{sex},</if>
+            <if test="phone != null">phone=#{phone},</if>
+            <if test="type != null">type=#{type}</if>
+        </set>
+        where name=#{name}
+    </update>
+</mapper>
