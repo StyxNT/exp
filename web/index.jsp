@@ -13,5 +13,7 @@
   <body>
   <a href="${pageContext.request.contextPath}/toRegister">注册</a>
   <a href="${pageContext.request.contextPath}/toVolunteer">志愿者主页</a>
+  <a href="${pageContext.request.contextPath}/toTeacher">老师主页</a>
+  <a href="${pageContext.request.contextPath}/toAdmin">管理员主页</a>
   </body>
 </html>
