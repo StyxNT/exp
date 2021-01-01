@@ -20,7 +20,13 @@
 <body>
 <div class="updateForm" id="updateForm">
 
-    <el-form  :model="form" :rules="rules" label-width="80px">
+    <el-form  :model="form" :rules="rules" label-width="80px" >
+
+        <el-form-item label="用户ID">
+            <el-input v-model="form.id" placeholder="请输入所需修改用户的ID"></el-input>
+            <el-button type="primary" @click="search">查询</el-button>
+
+        </el-form-item>
 
         <el-form-item label="姓名:">
             <el-input  v-model="form.name" placeholder="请输入姓名"></el-input>
@@ -43,6 +49,11 @@
             <el-input v-model="form.phone" placeholder="请输入手机号"></el-input>
         </el-form-item>
 
+                <el-form-item label="用户类型:">
+                    <el-radio v-model="form.type" label="volunteer">志愿者</el-radio>
+                    <el-radio v-model="form.type" label="teacher">老师</el-radio>
+                </el-form-item>
+
         <el-form-item>
             <el-button  type="primary" @click="submit">提交</el-button>
         </el-form-item>
@@ -58,12 +69,13 @@
         el:"#updateForm",
         data:{
             form:{
+                id:"",
                 name:"",
                 pswd:"",
                 sex:"",
                 age:"",
                 phone:"",
-                id:''
+                type:""
             },
             rules:{
                 phone: [
@@ -72,18 +84,6 @@
             }
 
         },
-        created: function () {
-            axios({
-                method:'post',
-                url:'getUserBySession'
-            }).then((response)=>
-            {
-                console.log(response.data)
-                this.form=response.data
-            }).catch(function (error) {
-                console.log(error)
-            })
-            },
         methods: {
             submit:function ()
             {
@@ -102,6 +102,29 @@
                         console.log(error);
                         alert("修改失败")
                     });
+            },
+            search:function ()
+            {
+                axios({
+                    method:'post',
+                    url:'getUserById',
+                    data:{
+                        id:this.form.id
+                    }
+                }).then((response)=>
+                {
+                    console.log(response.data)
+                    // this.form=response.data
+                    if(response.data===null)
+                    {
+                        alert("未找到该用户")
+                    }else {
+                        this.form=response.data
+                    }
+                }).catch(function (error) {
+                    console.log(error)
+                    alert("查询失败")
+                })
             }
         }
     })
@@ -109,9 +132,9 @@
 </script>
 <style>
     .updateForm{
-        width: 400px;
+        /*width: 400px;*/
         position: absolute;
-        left: 20%;
+        left: 30%;
         top: 20%;
 
     }

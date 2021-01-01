@@ -18,14 +18,24 @@ public class RouterController {
         return "updateUserInfo";
     }
 
-    @RequestMapping("toTeacher")
+    @RequestMapping("/toTeacher")
     public String toTeacherPage()
     {
         return "teacherPage";
     }
-    @RequestMapping("toAdmin")
+    @RequestMapping("/toAdmin")
     public String toAdminPage()
     {
         return "adminPage";
+    }
+    @RequestMapping("/toShowAllUsers")
+    public String toShowAllUsers()
+    {
+        return "showAllUsers";
+    }
+    @RequestMapping("/toUpdateUserAdmin")
+    public String toUpdateUserAdmin()
+    {
+        return "updateUserAdmin";
     }
 }

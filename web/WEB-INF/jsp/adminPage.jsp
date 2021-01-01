@@ -6,15 +6,21 @@
 
 <body>
 <div class="head">
-    志愿服务管理系统
+<%--    <P style="">志愿服务管理系统</P>--%>
+    <div class="tittle">
+        <h1>志愿服务管理系统</h1>
+    </div>
 </div>
 <div class="left">
-    <ul>
-        <li><a href="" target="main">查询所有用户信息</a></li>
-        <li><a href="/toUpdateUserInfo" target="main">管理用户信息</a></li>
-        <li><a href="" target="main">查询所有志愿活动信息</a></li>
-        <li><a href="" target="main">管理志愿活动</a></li>
-    </ul>
+    <div >
+        <ul>
+            <li>&nbsp;</li>
+            <li><a href="${pageContext.request.contextPath}/toShowAllUsers" target="main">查询所有用户信息</a></li>
+            <li><a href="${pageContext.request.contextPath}/toUpdateUserAdmin" target="main">修改用户信息</a></li>
+            <%--        <li><a href="" target="main">查询所有志愿活动信息</a></li>--%>
+            <%--        <li><a href="" target="main">管理志愿活动</a></li>--%>
+        </ul>
+    </div>
 </div>
 <div class="right">
     <iframe name="main" src="" width="99%" height="99%"></iframe>
@@ -28,21 +34,22 @@
     }
     .head{
         width: 100%;
-        height: 50px;
-        background: #409EFF;
+        height: 80px;
+        /*background: #66CC99;*/
+        background: #3fa7ed;
         position: relative;
     }
     .left{
         width: 200px;
-        background:rgb(78, 82, 80);
+        background: #f1f1f1;
         position: absolute;
-        top: 50px;
+        top: 80px;
         bottom: 0;
     }
     .right{
-        /* background:cyan; */
+         /*background:#CCFFFF;*/
         position: absolute;
-        top: 50px;
+        top: 80px;
         left: 220px;
         bottom: 60px;
         right: 0;
@@ -52,8 +59,8 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 60px;
-        background: #409EFF;
+        height: 80px;
+        background: #3fa7ed;
     }
 
     /*  */
@@ -66,6 +73,7 @@
     }
 
     li a {
+        background: #d0d0d0;
         display: block;
         color: #000;
         padding: 8px 16px;
@@ -74,10 +82,17 @@
 
     /* 鼠标移动到选项上修改背景颜色 */
     li a:hover {
-        background-color: #555;
+        background-color: #3fa7ed;
         color: white;
     }
     /*  */
+    .tittle{
+        color: #e5e5e5;
+        position: absolute;
+        left:40%;
+        top:20px
+
+    }
 </style>
 </body>
 </html>

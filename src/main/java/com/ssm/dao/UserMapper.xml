@@ -25,4 +25,12 @@
     <select id="getUserById" resultType="com.ssm.pojo.User">
         select * from user where id=#{id}
     </select>
+
+    <select id="getAllUsers" resultType="com.ssm.pojo.User">
+        select * from user where type!='admin'
+    </select>
+
+    <delete id="deleteUser">
+        delete from user where id=#{id}
+    </delete>
 </mapper>

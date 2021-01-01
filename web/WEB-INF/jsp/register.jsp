@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/http_unpkg.com_element-ui_lib_theme-chalk_index.css">--%>
+<%--    <script src="${pageContext.request.contextPath}/static/http_cdn.jsdelivr.net_npm_vue_dist_vue.js"></script>--%>
+<%--    <script src="${pageContext.request.contextPath}/static/http_unpkg.com_element-ui_lib_index.js"></script>--%>
+    <script src="${pageContext.request.contextPath}/static/http_unpkg.com_axios_dist_axios.js"></script>
     <title>注册</title>
 </head>
 <body>
@@ -32,8 +35,8 @@
             </el-form-item>
 
             <el-form-item label="性别:" prop="sex">
-                <el-radio v-model="form.sex" label="boy">男</el-radio>
-                <el-radio v-model="form.sex" label="girl">女</el-radio>
+                <el-radio v-model="form.sex" label="男">男</el-radio>
+                <el-radio v-model="form.sex" label="女">女</el-radio>
             </el-form-item>
 
             <el-form-item label="年龄" prop="age">
@@ -109,13 +112,13 @@
                         })
                             .then(function (response) {
                                 if(response.data>0)
-                                    alert("修改成功！")
+                                    alert("注册成功！")
                                 else
-                                    alert("修改失败")
+                                    alert("注册失败")
                             })
                             .catch(function (error) {
                                 console.log(error);
-                                alert("修改失败")
+                                alert("注册失败")
                             });
                     }else {
                         alert("两次输入的密码不相同！")
