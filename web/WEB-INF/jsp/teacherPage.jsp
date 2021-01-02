@@ -6,11 +6,18 @@
 
 <body>
 <div class="head">
-    志愿服务管理系统
+    <div class="tittle">
+        <p>&nbsp;</p>
+        <h1>志愿服务管理系统</h1>
+    </div>
+    <div class="logOut">
+        <a href="${pageContext.request.contextPath}/logOut">退出登录</a>
+    </div>
 </div>
 <div class="left">
     <ul>
-        <li><a href="/toUpdateUserInfo" target="main">修改个人信息</a></li>
+        <li>&nbsp;</li>
+        <li><a href="${pageContext.request.contextPath}/toUpdateUserInfo" target="main">修改个人信息</a></li>
         <li><a href="" target="main">发布志愿活动</a></li>
         <li><a href="" target="main">管理志愿活动</a></li>
         <li><a href="" target="main">发布成绩</a></li>
@@ -20,7 +27,13 @@
 <div class="right">
     <iframe name="main" src="" width="99%" height="99%"></iframe>
 </div>
-<div class="foot"></div>
+<div class="foot">
+    <div  class="footInfo">
+        <p>&nbsp;</p>
+        <p>©2020-2021 XXX and XXX. All Rights Reserved.</p>
+        <p>联系方式:123456@xx.com</p>
+    </div>
+</div>
 
 <style type="text/css">
     *{
@@ -29,21 +42,22 @@
     }
     .head{
         width: 100%;
-        height: 50px;
-        background: #409EFF;
+        height: 80px;
+        /*background: #66CC99;*/
+        background: #3fa7ed;
         position: relative;
     }
     .left{
         width: 200px;
-        background:rgb(78, 82, 80);
+        background: #f1f1f1;
         position: absolute;
-        top: 50px;
+        top: 80px;
         bottom: 0;
     }
     .right{
-        /* background:cyan; */
+        /*background:#CCFFFF;*/
         position: absolute;
-        top: 50px;
+        top: 80px;
         left: 220px;
         bottom: 60px;
         right: 0;
@@ -53,8 +67,8 @@
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 60px;
-        background: #409EFF;
+        height: 80px;
+        background: #3fa7ed;
     }
 
     /*  */
@@ -67,6 +81,7 @@
     }
 
     li a {
+        background: #d0d0d0;
         display: block;
         color: #000;
         padding: 8px 16px;
@@ -75,10 +90,35 @@
 
     /* 鼠标移动到选项上修改背景颜色 */
     li a:hover {
-        background-color: #555;
+        background-color: #3fa7ed;
         color: white;
     }
     /*  */
+    .tittle{
+        color: #e5e5e5;
+        /*position: absolute;*/
+        text-align:center;
+        left:40%;
+        top:20px
+
+    }
+    .logOut{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        /*top: 20px;*/
+        /*background: white;*/
+    }
+    .logOut a{
+        color: #e5e5e5;
+    }
+
+    .footInfo{
+        text-align:center;
+    }
+    .footInfo p{
+        color: #e5e5e5;
+    }
 </style>
 </body>
 </html>

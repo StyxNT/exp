@@ -6,9 +6,12 @@
 
 <body>
 <div class="head">
-<%--    <P style="">志愿服务管理系统</P>--%>
     <div class="tittle">
+        <p>&nbsp;</p>
         <h1>志愿服务管理系统</h1>
+    </div>
+    <div class="logOut">
+        <a href="${pageContext.request.contextPath}/logOut">退出登录</a>
     </div>
 </div>
 <div class="left">
@@ -17,15 +20,19 @@
             <li>&nbsp;</li>
             <li><a href="${pageContext.request.contextPath}/toShowAllUsers" target="main">查询所有用户信息</a></li>
             <li><a href="${pageContext.request.contextPath}/toUpdateUserAdmin" target="main">修改用户信息</a></li>
-            <%--        <li><a href="" target="main">查询所有志愿活动信息</a></li>--%>
-            <%--        <li><a href="" target="main">管理志愿活动</a></li>--%>
         </ul>
     </div>
 </div>
 <div class="right">
     <iframe name="main" src="" width="99%" height="99%"></iframe>
 </div>
-<div class="foot"></div>
+<div class="foot">
+        <div  class="footInfo">
+            <p>&nbsp;</p>
+            <p>©2020-2021 XXX and XXX. All Rights Reserved.</p>
+            <p>联系方式:123456@xx.com</p>
+        </div>
+</div>
 
 <style type="text/css">
     *{
@@ -88,10 +95,28 @@
     /*  */
     .tittle{
         color: #e5e5e5;
-        position: absolute;
+        /*position: absolute;*/
+        text-align:center;
         left:40%;
         top:20px
 
+    }
+    .logOut{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        /*top: 20px;*/
+        /*background: white;*/
+    }
+    .logOut a{
+        color: #e5e5e5;
+    }
+
+    .footInfo{
+        text-align:center;
+    }
+    .footInfo p{
+        color: #e5e5e5;
     }
 </style>
 </body>

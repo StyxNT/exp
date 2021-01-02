@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 
 @Controller
@@ -80,4 +81,12 @@ public class UserController {
         return result;
     }
 
+    @RequestMapping("/logOut")
+    public String logOut(HttpSession session)
+    {
+        session.invalidate();
+        return "../../index";
+    }
 }
+
+

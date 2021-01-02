@@ -3,39 +3,39 @@ package com.ssm.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class RouterController {
 
     @RequestMapping("/toVolunteer")
-    public String toMain()
-    {
+    public String toMain() {
         return "volunteerPage";
     }
 
     @RequestMapping("/toUpdateUserInfo")
-    public String toLeft()
-    {
+    public String toLeft() {
         return "updateUserInfo";
     }
 
     @RequestMapping("/toTeacher")
-    public String toTeacherPage()
-    {
+    public String toTeacherPage() {
         return "teacherPage";
     }
+
     @RequestMapping("/toAdmin")
-    public String toAdminPage()
-    {
+    public String toAdminPage() {
         return "adminPage";
     }
+
     @RequestMapping("/toShowAllUsers")
-    public String toShowAllUsers()
-    {
+    public String toShowAllUsers() {
         return "showAllUsers";
     }
+
     @RequestMapping("/toUpdateUserAdmin")
-    public String toUpdateUserAdmin()
-    {
+    public String toUpdateUserAdmin() {
         return "updateUserAdmin";
     }
 }
+
